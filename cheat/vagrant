@@ -1,0 +1,53 @@
+# add box to your local vagrant repo and alise it
+# then, vagrant can manage added box
+vagrant box add Ubuntu_Server_14.04 ./trusty-server-amd64-vagrant.box
+
+# Initate Vagrant
+mkdir vag-vm; cd vag-vm
+vagrant init Ubuntu_Server_14
+
+# Add a box  in Vagrant file
+config.vm.box = "hashicorp/precise32"
+
+# Add vm to public network as host
+config.vm.network "public_network"
+
+# Add provision script to vagrant file
+config.vm.provision :shell, path: "provision.sh"
+
+# 查看系统中已添加管理的 box
+vagrant box list
+
+# 查看当前所有 vagrant enviroment 状态
+vagrant global-status
+# ** Run  the following commands in yout vagrant project directory **
+
+# Start vm or init virtual machine if first run
+vagrant up
+
+# Connect to started instance
+vagrant ssh
+
+# Shutdown vm
+vagrant halt
+
+# Hibernate vm
+vagrant suspend
+
+# 从休眠中恢复 vm
+vagrant resume
+
+# Restart vm
+vagrant reload
+
+# Restart vm with new provision script
+vagrant reload --provision
+
+# 删除当前 vagrant 虚拟机, 但是并不能删除 box
+vagrant destroy
+
+# 查看 vagrant 状态  
+vagrant status
+
+# 打包当前 vagrant 环境  
+vagrant packgae
