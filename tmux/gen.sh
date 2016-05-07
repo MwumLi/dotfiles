@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 
-cat tmux.basic.conf > tmux.conf
+# basic key bindind
+cat tmux.basic.conf  > tmux.conf
 
+# bottom statusbar
+cat tmux.status.conf >> tmux.conf
+
+# colors
+cat tmux.colors.conf >> tmux.conf
+
+# mouse support according to tmux version
 tmux_version_major=`tmux -V | cut -d' ' -f2 | cut -d'.' -f1`
 tmux_version_minor=`tmux -V | cut -d' ' -f2 | cut -d'.' -f2`
 
