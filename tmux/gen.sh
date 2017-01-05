@@ -3,6 +3,9 @@
 # basic key bindind
 cat tmux.basic.conf  > tmux.conf
 
+# not change window name automatically
+cat tmux.not-change-window-name.conf >> tmux.conf
+
 # bottom statusbar
 cat tmux.status.conf >> tmux.conf
 
