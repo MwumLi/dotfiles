@@ -17,8 +17,8 @@ function! UserInit()
 
     " Space has been set as the default leader key,
     " if you want to change it, uncomment and set it here.
-    " let g:spacevim_leader = "<\Space>"
-    " let g:spacevim_localleader = ','
+    let g:spacevim_leader = "<\Space>"
+    let g:spacevim_localleader = "'"
 
     " Install private plugins
     " Plug 'extr0py/oni'
