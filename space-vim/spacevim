@@ -35,4 +35,11 @@ function! UserConfig()
     " When on, lines longer than the width of the window will wrap and
     " displaying continues on the next line.
     set wrap
+
+    " cancel map : jj/jk to Esc
+    iunmap jj
+    iunmap jk
+    cunmap jj
+    cunmap jk
+
 endfunction
