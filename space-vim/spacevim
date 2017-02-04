@@ -32,4 +32,7 @@ function! UserConfig()
     " let g:airline_powerline_fonts=1
     " color desert
 
+    " When on, lines longer than the width of the window will wrap and
+    " displaying continues on the next line.
+    set wrap
 endfunction
