@@ -6,10 +6,13 @@
 function! Layers()
 
     " Default layers, recommended!
-    Layer 'fzf'
-    Layer 'unite'
-    Layer 'better-defaults'
+     Layer 'fzf'
+     Layer 'unite'
+     Layer 'better-defaults'
 
+     Layer 'git'
+     Layer 'programming'
+     Layer 'auto-completion'
 endfunction
 
 " Put your private plugins here.
