@@ -32,8 +32,15 @@ export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
 # Go Project Work Directory
 export GOPATH=$HOME/shared_folder/go
+# add Go/bin to PATh
+export PATH=$PATH:${GOPATH//://bin:}/bin
 # ignore 'net/http' test when build go
 export DISABLE_NET_TESTSm=1
+
+#
+# layer-vim
+# export LAYERVIM_LAYERS_PATH=$HOME/.vim/layers
+# export LAYERVIM_LAYERS_REPO_URI='https://github.com/MwumLi/ifmicro-layers.git'
 
 #
 # Some configuration for node and npm
@@ -76,13 +83,38 @@ vman() {
         vim -R -c 'set ft=man nomod nolist' -
 }
 
-enable_proxy() {
-    # export http_proxy=http://x.x.x.x:8080
-}
-
 function laravel() {
   ( cd /Users/Luo/WorkSpace/vagrant/laravel && vagrant $* )
 }
+
+## proxy
+enable_proxy() {
+  # 使用你的真实代理地址替换
+  # proxy=http://x.x.x.x:8080
+
+  if [ -n $1 ]
+  then
+    proxy=$1
+  fi
+
+  export http_proxy=$proxy
+  export https_proxy=$proxy
+  export all_proxy=$proxy
+  curl ip.gs
+}
+
+disable_proxy() {
+
+  unset http_proxy
+  unset https_proxy
+  unset all_proxy
+  curl ip.gs
+}
+
+up_proxy() {
+  ssh -o ServerAliveInterval=60 -D 127.0.0.1:7070 proxy
+}
+
 #
 # To do list :
 # 1. set  Workspace path for vagrant
