@@ -1,5 +1,5 @@
 # dotfiles
-Sync tmux, cheat, shell ...
+Sync iterm2, tmux, cheat, shell ...
 
 ## Configurations
 
@@ -8,3 +8,5 @@ Sync tmux, cheat, shell ...
 
 * tmux : `tmux` 的配置  
   Usage : `cd tmux && sh gen.sh && cp tmux.conf ~/.tmux.conf`
+
+* iterm : 包含 `iterm2` 的配色方案
